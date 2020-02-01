@@ -94,7 +94,7 @@ metrics.r2_score(ytest_uc004,ypred_uc004)   # This Model has performance of 99.1
 # Use Case 005 - Predictions for MC Subscriptions  based on Visits , Unique Visitors , leads , MQL , Pipeline Count and Opportunity Account
 x_uc005 = df.drop(['mc_subscriptions','mc_net_adds'], axis=1)
 y_uc005 = df['mc_subscriptions']
-xtrain_uc005,xtest_uc005,ytrain_uc005,ytest_uc005 = train_test_split(x_uc005,y_uc005,test_size=0.25 , random_state=5 )
+xtrain_uc005,xtest_uc005,ytrain_uc005,ytest_uc005 = train_test_split(x_uc005,y_uc005,test_size=0.30 , random_state=5 )
 
 model_uc005 = LinearRegression()
 model_uc005.fit(xtrain_uc005 , ytrain_uc005)
@@ -104,13 +104,16 @@ test_uc005 = [[19,10,5,4,3,3]]
 model_uc005.predict(test_uc005)
 ypred_uc005 = model_uc005.predict(xtest_uc005)
 from sklearn import metrics
-metrics.r2_score(ytest_uc005,ypred_uc005)   # This Model has performance of 91.72%
+metrics.r2_score(ytest_uc005,ypred_uc005)   
+# Train/Test 75/25 - performance of 91.72% 
+# Train/Test 80/20 - performance of 91.72%
+# Train/Test 70/30 - performance of 91.70%
 
 
 # Use Case 006 - Predictions for MC Net Addition based on Visits , Unique Visitors , leads , MQL , Pipeline Count , Opportunity Account and MC Subscriptions  
 x_uc006 = df.drop(['mc_net_adds'], axis=1)
 y_uc006 = df['mc_net_adds']
-xtrain_uc006,xtest_uc006,ytrain_uc006,ytest_uc006 = train_test_split(x_uc006,y_uc006,test_size=0.25 , random_state=5 )
+xtrain_uc006,xtest_uc006,ytrain_uc006,ytest_uc006 = train_test_split(x_uc006,y_uc006,test_size=0.30 , random_state=5 )
 
 model_uc006 = LinearRegression()
 model_uc006.fit(xtrain_uc006 , ytrain_uc006)
@@ -120,4 +123,7 @@ test_uc006 = [[19,10,5,4,3,3,1]]
 model_uc006.predict(test_uc006)
 ypred_uc006 = model_uc006.predict(xtest_uc006)
 from sklearn import metrics
-metrics.r2_score(ytest_uc006,ypred_uc006)   # This Model has performance of 84.16%
+metrics.r2_score(ytest_uc006,ypred_uc006)  
+# Train/Test 75/25 - performance of 85.00%
+# Train/Test 80/20 - performance of 84.13%
+# Train/Test 70/30 - performance of 84.05%

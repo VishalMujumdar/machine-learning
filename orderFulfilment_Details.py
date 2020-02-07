@@ -84,9 +84,12 @@ def orderDetails_pTest():
     
     
     df1 = df
-    vif_cal(df1 , "mc_billings")
-    vif_cal(df1 , "billings_target")
-    vif_cal(df1 , "pipeline")
-    vif_cal(df1 , "spend")
-    vif_cal(df1 , "budget")
+    vif_cal(df1 , "purchase")
+    vif_cal(df1 , "cart_additions")
+    vif_cal(df1 , "orders")
+    vif_cal(df1 , "won_acc")
+    vif_cal(df1 , "hiValued_acc")
+    vif_cal(df1 , "engaged_acc")
+    vif_cal(df1 , "touched_acc")
+    
    

@@ -11,6 +11,16 @@ import statsmodels.formula.api as sm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+def vif_cal(input_data, dependent_col):
+    x_vars=input_data.drop([dependent_col], axis=1)
+    xvar_names=x_vars.columns
+    for i in range(0,xvar_names.shape[0]):
+        y1=x_vars[xvar_names[i]]
+        x1=x_vars[xvar_names.drop(xvar_names[i])]
+        rsq=sm.ols(formula="y1~x1", data=x_vars).fit().rsquared
+        vif=round(1/(1-rsq),2)
+        print (xvar_names[i], " VIF = " , vif)
+
 
 def expDetails_pTest():
     # Read CSV File to capture Marketing Details
@@ -94,5 +104,12 @@ def expDetails_pTest():
     fitted_spend = model_spend.fit()
     fitted_spend.summary()
     
+    
+    df1 = df
+    vif_cal(df1 , "mc_billings")
+    vif_cal(df1 , "billings_target")
+    vif_cal(df1 , "pipeline")
+    vif_cal(df1 , "spend")
+    vif_cal(df1 , "budget")
     
     

@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def mktDetails_pTest():
+def expDetails_pTest():
     # Read CSV File to capture Marketing Details
     df = pd.read_csv('C:\codeRepository\machine-learning\BudgetSpend_Details.csv')
     

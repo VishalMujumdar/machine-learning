@@ -1,0 +1,36 @@
+-- Table: public.campaign_details
+
+-- DROP TABLE public.campaign_details;
+
+CREATE TABLE public.campaign_details
+(
+    campaign_id text COLLATE pg_catalog."default" NOT NULL,
+    year integer,
+    quarter character(8) COLLATE pg_catalog."default",
+    week character(8) COLLATE pg_catalog."default",
+    sales_channel character(24) COLLATE pg_catalog."default",
+    mc_type character(16) COLLATE pg_catalog."default",
+    industry character(32) COLLATE pg_catalog."default",
+    sub_industry character(24) COLLATE pg_catalog."default",
+    sub_industry_2 character(24) COLLATE pg_catalog."default",
+    geo character(16) COLLATE pg_catalog."default",
+    country character(16) COLLATE pg_catalog."default",
+    campaign_theme character(16) COLLATE pg_catalog."default",
+    parent_campaign character(16) COLLATE pg_catalog."default",
+    child_campaign character(16) COLLATE pg_catalog."default",
+    date_created timestamp without time zone,
+    date_last_modified timestamp without time zone,
+    CONSTRAINT campaign_details_pkey PRIMARY KEY (campaign_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.campaign_details
+    OWNER to postgres;
+	
+	date_created
+	date_last_modified
+	
+	
